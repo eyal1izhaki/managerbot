@@ -11,7 +11,7 @@ Run  `pip install -r requiremenst.txt`
 3. Replace  `<LIST OF IDS>` with a list of users ids.
 
 # Run
-Run `Python3 run.py`.
+Run `python3 run.py`.
 
 # Logs
 All logs will be send to `bot.log` file

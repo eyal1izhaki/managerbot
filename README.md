@@ -4,7 +4,7 @@ Run  `pip install -r requiremenst.txt`
 
 
 # Configurations
-1. Change **'config.py.example'** to **'config.py'**.
+1. Change `config.py.example` to `config.py`.
 
 2. Replace `<YOUR TELEGRAM BOT TOKEN>` with your real bot token.
   

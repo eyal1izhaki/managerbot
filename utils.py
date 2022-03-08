@@ -10,7 +10,7 @@ def check_user_id(func):
         context = args[1]
 
         if updater.message.from_user["id"] not in ALLOWED_USERS:
-            context.bot.send_message(updater.message.chat_id, "403 Forbidden")
+            context.bot.send_message(updater.message.chat_id, "405")
             return
 
         func(*args, **kwargs)

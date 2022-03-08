@@ -4,9 +4,11 @@ from config import *
 from logger import logger
 from utils import check_user_id
 from pyngrok import ngrok
+from pyngrok.conf import PyngrokConfig
 
 
 ssh_tunnel = None
+config = None
 
 @check_user_id
 def open_tunnel(update: Update, context: CallbackContext):
@@ -17,7 +19,7 @@ def open_tunnel(update: Update, context: CallbackContext):
     logger.info("Handeling '/open' command.")
 
     if ssh_tunnel == None:
-        ssh_tunnel = ngrok.connect(22, "tcp")
+        ssh_tunnel = ngrok.connect(22, "tcp", pyngrok_config=config)
 
         context.bot.send_message(chat_id, ssh_tunnel.public_url)
 
@@ -49,6 +51,11 @@ def close_tunnel(update: Update, context: CallbackContext):
 
 
 def main():
+    # Creating ngrok config object
+    global config
+    config = PyngrokConfig()
+    config.auth_token = NGROK_TOKEN
+    config.region = "eu"
 
     # Creating the bot
     updater = Updater(TOKEN)

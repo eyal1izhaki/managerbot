@@ -1,2 +1,3 @@
 TOKEN = <YOUR TELEGRAM BOT TOKEN> # Type string
 ALLOWED_USERS = <LIST OF IDS> # Type list of numbers
+NGROK_TOKEN = <YOUR NGROK TOKEN>
